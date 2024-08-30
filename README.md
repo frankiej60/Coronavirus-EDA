@@ -10,3 +10,8 @@ This project utilized a comprehensive dataset that encompasses COVID-19 data fro
 ---
 - Microsoft Sql server data analysis software
     - [Download here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+
+
+### Tableau Dashboard
+---
+[View here](https://frankiej60.github.io/Coronavirus-EDA-Dashboard/)
