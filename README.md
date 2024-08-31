@@ -11,9 +11,9 @@ Used excel to clean... Mysql server to analyse the data....
 
 ### Tools
 ---
-- Microsoft Excel
-    - 
-- Microsoft Sql server data analysis software
+- Microsoft Office
+    - [Download here](https://www.microsoft.com/en-us/microsoft-365/microsoft-office)
+- Microsoft Sql server 
     - [Download here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
 
