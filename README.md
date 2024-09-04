@@ -19,6 +19,8 @@ Some insights from the analysis would include;
     - [Download here](https://www.microsoft.com/en-us/microsoft-365/microsoft-office)
 - Microsoft Sql server 
     - [Download here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+- Tableau
+    - [Download here](https://www.tableau.com/products/desktop/download)
 
 
 ### Tableau Dashboard
