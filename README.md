@@ -6,7 +6,7 @@ This project used a comprehensive dataset that encompasses COVID-19 data from ar
 
 ### Data Analysis 
 ---
-Some insights from the analysis would be;
+Some insights from the analysis would include;
     - Changes in number of affected cases over time
     - Change in cases over time at country level
     - Latest number of affected cases
