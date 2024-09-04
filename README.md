@@ -2,7 +2,7 @@
 
 ### Project brief
 ---
-This project used a comprehensive dataset that encompasses COVID-19 data from around the globe. This dataset includes information on confirmed cases, deaths, testing, vaccinations and other relevant variables that provide a holistic view of the pandemic's progression. Using SQL queries and Microsoft SQL Server, an in-depth analysis was done on the dataset.
+This project used a comprehensive dataset that encompasses COVID-19 data from around the globe. This dataset includes information on confirmed cases, deaths, testing, vaccinations and other relevant variables that provide a holistic view of the pandemic's progression. Using SQL queries in Microsoft SQL Server, an in-depth analysis was done on the dataset.
 
 ### Data Analysis 
 ---
@@ -25,4 +25,4 @@ Some insights from the analysis would include;
 
 ### Tableau Dashboard
 ---
-[View here](https://frankiej60.github.io/Coronavirus-EDA-Dashboard/)
+[View here](https://public.tableau.com/app/profile/juwon.oluwole/viz/Covid19dashboard_17249520769460/Dashboard1?publish=yes)
