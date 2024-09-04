@@ -4,10 +4,14 @@
 ---
 This project utilized a comprehensive dataset that encompasses COVID-19 data from around the globe. This dataset includes information on confirmed cases, deaths, testing, vaccinations and other relevant variables that provide a holistic view of the pandemic's progression. Using SQL queries and Microsoft SQL Server, an in-depth analysis on the COVID-19 data was done.
 
-### Project scope
+### Data Analysis 
 ---
-Used excel to clean... Mysql server to analyse the data....
-
+Some insights from the analysis would be;
+    - Changes in number of affected cases over time
+    - Change in cases over time at country level
+    - Latest number of affected cases
+    - Changes in the spread overtime between china and other countries
+    - Number of countries most affected by the virus
 
 ### Tools
 ---
