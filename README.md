@@ -20,6 +20,10 @@ Some insights from the analysis would include;
 - Changes in the spread overtime between china and other countries
 - Number of countries most affected by the virus
 
+### Tableau Dashboard
+---
+[View here](https://public.tableau.com/app/profile/juwon.oluwole/viz/Covid19dashboard_17249520769460/Dashboard1?publish=yes)
+
 ### Tools
 ---
 - Microsoft Office
@@ -30,6 +34,3 @@ Some insights from the analysis would include;
     - [Download here](https://www.tableau.com/products/desktop/download)
 
 
-### Tableau Dashboard
----
-[View here](https://public.tableau.com/app/profile/juwon.oluwole/viz/Covid19dashboard_17249520769460/Dashboard1?publish=yes)
