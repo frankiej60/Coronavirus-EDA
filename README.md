@@ -4,14 +4,21 @@
 ---
 This project used a comprehensive dataset that encompasses COVID-19 data from around the globe. This dataset includes information on confirmed cases, deaths, testing, vaccinations and other relevant variables that provide a holistic view of the pandemic's progression. Using SQL queries in Microsoft SQL Server, an in-depth analysis was done on the dataset.
 
+### Research questions
+- Which are the 5 most affected countries in the world?
+- Does latitude and longitude affect the number of cases?
+- Which country has the highest death and recovery rate?
+- Which date of every month recorded the highest number of cases in the world?
+- Are the different parameters dependent on each other? 
+
 ### Data Analysis 
 ---
 Some insights from the analysis would include;
-    - Changes in number of affected cases over time
-    - Change in cases over time at country level
-    - Latest number of affected cases
-    - Changes in the spread overtime between china and other countries
-    - Number of countries most affected by the virus
+- Changes in number of affected cases over time
+- Change in cases over time at country level
+- Latest number of affected cases
+- Changes in the spread overtime between china and other countries
+- Number of countries most affected by the virus
 
 ### Tools
 ---
