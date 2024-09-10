@@ -11,7 +11,8 @@ This project used a comprehensive dataset that encompasses COVID-19 data from ar
 - In terms of death rate, United States had the highest death count with 1.19M deaths, Brazil with 702,116 deaths, India with 533,623 deaths, Russia with 403,178 deaths and Mexico with 334,537 deaths.
 - The global figures of total cases are 775,897,706, total deaths are 7,059,951 and the global death percentage was 0.9%. 
 - By end of 2021, total population of new vaccinations in selected countries include: Nigeria with 596,649, United States with 620,908, United Kingdom with 204,514, China with 1.1m and Russia with 1.7M. 
-
+- Seasons can play a significant role in the increase of cases as the flu season can cause a new wave. The numbe of new cases in the United States reached 1.06M during Winter 2020.
+  
 ### Tableau Dashboard
 ---
 [View here](https://public.tableau.com/app/profile/juwon.oluwole/viz/Covid19dashboard_17249520769460/Dashboard1?publish=yes)
