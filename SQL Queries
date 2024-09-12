@@ -2,7 +2,6 @@
 
 select * 
 from [Portfolio project]..['covid vaccinations data$']
-where continent is not null
 order by 3,4
 
 
@@ -16,6 +15,16 @@ total_cases,
 new_cases, total_deaths, population 
 from 
 [Portfolio project]..['covid deaths data$']
+
+select location, 
+date, 
+total_cases, 
+new_cases, total_deaths, population 
+from 
+[Portfolio project]..['covid deaths data$']
+where location like '%united states%'
+order by location, date
+
 
 --percentage of deaths in select countries across the continents 
 
@@ -42,11 +51,11 @@ SELECT location,
            ELSE (total_deaths / total_cases) * 100 
        END AS DeathPercentage 
 FROM [Portfolio project]..['covid deaths data$'] 
-WHERE location LIKE '%united%' 
-ORDER BY 1,2 desc
+WHERE location LIKE '%united states%' 
+ORDER BY 1,2 
 
 
--- united states - John hopkins university estimates are similar to database total cases and death percentage as of 2024. 
+-- united states - John hopkins university estimates are similar to database total cases and death percentage as of 2024
 
 -- united kingdom
 SELECT location, 
@@ -185,66 +194,170 @@ and dea.date = vac.date
 where dea.continent is not null 
 order by dea.location, dea.date
 
--- Total population vs vaccinated in Nigeria
+-- Total population vs vaccinations (rolling total)
+
 select 
-    dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
-    sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
-	as Rolling_people_vaccinated 
+dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
+sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
+as Rolling_people_vaccinated 
 from [Portfolio project]..['covid deaths data$'] dea 
 join [Portfolio project]..['covid vaccinations data$'] vac 
 on dea.location = vac.location 
-    AND dea.date = vac.date 
-where dea.continent IS NOT NULL 
-   and dea.location LIKE '%Nigeria%' 
+and dea.date = vac.date 
+where dea.continent is not null 
 order by dea.location, dea.date
 
 select 
-    dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
-    sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
-	as Rolling_people_vaccinated 
+dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
+sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
+as Rolling_people_vaccinated 
 from [Portfolio project]..['covid deaths data$'] dea 
 join [Portfolio project]..['covid vaccinations data$'] vac 
 on dea.location = vac.location 
-    AND dea.date = vac.date 
-where dea.continent IS NOT NULL 
-   and dea.location LIKE '%United States%' 
+and dea.date = vac.date 
+where dea.continent is not null 
+and dea.location like '%Nigeria%'
 order by dea.location, dea.date
 
 select 
-    dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
-    sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
-	as Rolling_people_vaccinated 
+dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
+sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
+as Rolling_people_vaccinated 
 from [Portfolio project]..['covid deaths data$'] dea 
 join [Portfolio project]..['covid vaccinations data$'] vac 
 on dea.location = vac.location 
-    AND dea.date = vac.date 
-where dea.continent IS NOT NULL 
-   and dea.location LIKE '%united kingdom%' 
+and dea.date = vac.date 
+where dea.continent is not null 
+and dea.location like '%united states%'
 order by dea.location, dea.date
 
 select 
-    dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
-    sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
-	as Rolling_people_vaccinated 
+dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
+sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
+as Rolling_people_vaccinated 
 from [Portfolio project]..['covid deaths data$'] dea 
 join [Portfolio project]..['covid vaccinations data$'] vac 
 on dea.location = vac.location 
-    AND dea.date = vac.date 
-where dea.continent IS NOT NULL 
-   and dea.location LIKE '%China%' 
+and dea.date = vac.date 
+where dea.continent is not null 
+and dea.location like '%Brazil%'
 order by dea.location, dea.date
 
 select 
-    dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
-    sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
-	as Rolling_people_vaccinated 
+dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
+sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
+as Rolling_people_vaccinated 
 from [Portfolio project]..['covid deaths data$'] dea 
 join [Portfolio project]..['covid vaccinations data$'] vac 
 on dea.location = vac.location 
-    AND dea.date = vac.date 
-where dea.continent IS NOT NULL 
-   and dea.location LIKE '%Russia%' 
+and dea.date = vac.date 
+where dea.continent is not null 
+and dea.location like '%united kingdom%'
 order by dea.location, dea.date
+
+select 
+dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
+sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
+as Rolling_people_vaccinated 
+from [Portfolio project]..['covid deaths data$'] dea 
+join [Portfolio project]..['covid vaccinations data$'] vac 
+on dea.location = vac.location 
+and dea.date = vac.date 
+where dea.continent is not null 
+and dea.location like '%china%'
+order by dea.location, dea.date
+
+select 
+dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
+sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
+as Rolling_people_vaccinated 
+from [Portfolio project]..['covid deaths data$'] dea 
+join [Portfolio project]..['covid vaccinations data$'] vac 
+on dea.location = vac.location 
+and dea.date = vac.date 
+where dea.continent is not null 
+and dea.location like '%Russia%'
+order by dea.location, dea.date
+
+-- CTE
+with Popvsvac (continent, location, date, population, new_vaccinations, rolling_people_vaccinated)
+as
+(
+select 
+dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
+sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
+as Rolling_people_vaccinated 
+from [Portfolio project]..['covid deaths data$'] dea 
+join [Portfolio project]..['covid vaccinations data$'] vac 
+on dea.location = vac.location 
+and dea.date = vac.date 
+where dea.continent is not null 
+)
+select * , (rolling_people_vaccinated/Population)*100
+from Popvsvac
+
+
+
+with Popvsvac (continent, location, date, population, new_vaccinations, rolling_people_vaccinated)
+as
+(
+select 
+dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
+sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
+as Rolling_people_vaccinated 
+from [Portfolio project]..['covid deaths data$'] dea 
+join [Portfolio project]..['covid vaccinations data$'] vac 
+on dea.location = vac.location 
+and dea.date = vac.date 
+where dea.continent is not null 
+and dea.location like '%Nigeria%'
+)
+select * , (rolling_people_vaccinated/Population)*100 as Percent_Vaccinated
+from Popvsvac
+
+
+--Temp table
+
+drop table if exists #Percentpopulationvaccinated
+Create table #Percentpopulationvaccinated
+(
+continent nvarchar (255),
+location nvarchar (255),
+Date datetime,
+population numeric,
+new_vaccinations numeric,
+Rolling_people_vaccinated numeric
+)
+insert into #Percentpopulationvaccinated
+select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
+sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
+as Rolling_people_vaccinated 
+from [Portfolio project]..['covid deaths data$'] dea 
+join [Portfolio project]..['covid vaccinations data$'] vac 
+on dea.location = vac.location 
+and dea.date = vac.date 
+where dea.continent is not null
+
+select * , (rolling_people_vaccinated/Population)*100 as Percent_Vaccinated
+from #Percentpopulationvaccinated
+
+
+-- Creat views 
+
+Create View Percentpopulationvaccinated as
+select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations, 
+sum(coalesce(convert(bigint, vac.new_vaccinations), 0)) over (partition by dea.location order by dea.location, dea.date) 
+as Rolling_people_vaccinated 
+from [Portfolio project]..['covid deaths data$'] dea 
+join [Portfolio project]..['covid vaccinations data$'] vac 
+on dea.location = vac.location 
+and dea.date = vac.date 
+where dea.continent is not null
+
+select *
+from Percentpopulationvaccinated
+
+
 
 
 
